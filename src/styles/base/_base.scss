@@ -1,0 +1,39 @@
+/*-------------------------------*/
+/*GLOBALS*/
+/*-------------------------------*/
+:root {
+  font-size: 18px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: $font-family--primary;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+textarea,
+input {
+  border: none;
+  resize: none;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+}

@@ -1,0 +1,52 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding-bottom: space(20);
+
+  &-grid1 {
+    grid-column-start: 1;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 1;
+    margin-top: space(9);
+  }
+
+  &-heading {
+    margin-bottom: space(1);
+  }
+
+  &-subheading {
+    margin-bottom: space(8);
+  }
+
+  &-grid2 {
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .light &-grid2 {
+    background-color: $color--white;
+    border-radius: $border-radius--small;
+  }
+
+  &-headshot {
+    width: 100%;
+    margin-top: space(19);
+    padding: 0 space(2);
+    margin-bottom: space(-4);
+  }
+
+  &-btn {
+    padding: space(1.5) space(3);
+    border-radius: $border-radius--circle;
+    font-family: $font-family--secondary;
+  }
+
+  .light &-btn {
+    background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
+    color: $color--light-gray;
+  }
+}

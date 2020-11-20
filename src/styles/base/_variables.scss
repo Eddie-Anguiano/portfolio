@@ -24,7 +24,7 @@ $font-family--secondary: "Rubik", sans-serif;
 /*-------------------------------*/
 
 $color--white: #fff;
-$color--black: rgb(44, 44, 44);
+$color--black: #1f1f1f;
 $color--light-gray: #f5f5f5;
 
 /*-------------------------------*/
@@ -37,7 +37,8 @@ $img-path: "../images";
 /* BORDER RADIUS */
 /*-------------------------------*/
 
-// $border-radius--small: 4px;
+$border-radius--small: 4px;
+$border-radius--circle: 100px;
 
 /*-------------------------------*/
 /* SPACING */
@@ -52,9 +53,8 @@ $img-path: "../images";
 /* Z-INDEX */
 /*-------------------------------*/
 
-// $index--1: 1;
-// .hero__img-phones
-// .img__phones
+$index--1: 1;
+//.hero-grid1
 
 // $index--2: 2;
 // .mobile-nav-background

@@ -12,6 +12,7 @@
   padding: 0;
   box-sizing: inherit;
   font-family: $font-family--primary;
+  color: $color--black;
 }
 
 body {
@@ -36,4 +37,23 @@ input:focus {
 
 li {
   list-style-type: none;
+}
+
+h1 {
+  font-size: space(5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family--secondary;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
 }

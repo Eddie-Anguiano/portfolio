@@ -1,14 +1,20 @@
 import React from "react";
 import headshot from "../../images/headshot.png";
 
-export default function Hero() {
+export default function Hero(props) {
   return (
-    <div className="hero wrapper light">
+    <div
+      className={
+        props.theme === "light"
+          ? "hero wrapper hero-light"
+          : "hero wrapper hero-dark"
+      }>
       <div className="hero-grid1">
         <h1 className="hero-heading">
           Hi!
           <br />
-          I'm Eddie, a freelance Web Developer
+          I'm <span className="hero-underline">Eddie</span>, a freelance Web
+          Developer
           <br />
           located in Los Angeles.
         </h1>

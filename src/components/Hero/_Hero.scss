@@ -16,6 +16,11 @@
     margin-bottom: space(1);
   }
 
+  &-underline {
+    position: relative;
+    font-family: $font-family--secondary;
+  }
+
   &-subheading {
     margin-bottom: space(8);
   }
@@ -25,10 +30,6 @@
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 2;
-  }
-
-  .light &-grid2 {
-    background-color: $color--white;
     border-radius: $border-radius--small;
   }
 
@@ -44,9 +45,64 @@
     border-radius: $border-radius--circle;
     font-family: $font-family--secondary;
   }
+}
 
-  .light &-btn {
+.hero-light .hero {
+  &-btn {
     background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
     color: $color--light-gray;
+  }
+
+  &-grid2 {
+    background-color: $color--white;
+  }
+
+  &-underline {
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: 6px;
+      left: 0;
+      height: space(1);
+      width: 100%;
+      background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
+      border-radius: 1px;
+    }
+  }
+}
+
+.hero-dark .hero {
+  &-heading {
+    color: $color--white;
+  }
+
+  &-subheading {
+    color: $color--white;
+  }
+
+  &-btn {
+    background: linear-gradient(344.67deg, #1b416f 10.4%, #424279 89.19%);
+    border-radius: 100px;
+    color: $color--light-gray;
+  }
+
+  &-grid2 {
+    background-color: $color--off-black;
+  }
+
+  &-underline {
+    color: $color--white;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: 6px;
+      left: 0;
+      height: space(1);
+      width: 100%;
+      background: linear-gradient(344.67deg, #1b416f 10.4%, #424279 89.19%);
+      border-radius: 1px;
+    }
   }
 }

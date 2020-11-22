@@ -1,6 +1,29 @@
 import React, { Component } from "react";
 import logo from "../../images/my-logo.svg";
 import logoDark from "../../images/my-logo-dark2.svg";
+import { motion } from "framer-motion";
+
+const listVariants = {
+  animate: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  initial: {
+    opacity: 0,
+    y: -40,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
 
 export default class Header extends Component {
   constructor(props) {
@@ -15,29 +38,41 @@ export default class Header extends Component {
   render() {
     console.log(this.props);
     return (
-      <div
+      <motion.div
         className={
           this.props.theme === "light"
             ? "header wrapper header-light"
             : "header wrapper header-dark"
-        }>
-        <div className="header-logo-wrapper">
+        }
+        variants={listVariants}
+        initial="initial"
+        animate="animate">
+        <motion.div variants={itemVariants} className="header-logo-wrapper">
           <img
             src={this.props.theme === "light" ? logo : logoDark}
             alt="logo"
             className="header-logo"
           />
-        </div>
+        </motion.div>
 
         <ul className="header-nav">
-          <li className="header-link">projects</li>
-          <li className="header-link">about</li>
-          <li className="header-link">contact</li>
-          <li className="header-link" onClick={this.toggleTheme}>
+          <motion.li variants={itemVariants} className="header-link">
+            projects
+          </motion.li>
+          <motion.li variants={itemVariants} className="header-link">
+            about
+          </motion.li>
+          <motion.li variants={itemVariants} className="header-link">
+            contact
+          </motion.li>
+          <motion.li
+            variants={itemVariants}
+            className="header-link"
+            onClick={this.toggleTheme}>
             dark mode
-          </li>
+          </motion.li>
         </ul>
-      </div>
+      </motion.div>
     );
   }
 }

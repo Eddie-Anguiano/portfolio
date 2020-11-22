@@ -6,7 +6,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: "dark",
+      theme: "light",
     };
     this.toggleTheme = this.toggleTheme.bind(this);
   }

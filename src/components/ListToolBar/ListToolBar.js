@@ -1,5 +1,6 @@
 import React from "react";
 import DropDown from "../DropDown/DropDown";
+import ColorDropDown from "../ColorDropDown/ColorDropDown";
 
 export default function ListToolBar(props) {
   return (
@@ -19,9 +20,10 @@ export default function ListToolBar(props) {
 
       <div className="ListToolBar-colorContainer">
         <div className="ListToolBar-label">color</div>
-        <div className="ListToolBar-colorDropDown">
-          <div className="ListToolBar-colorBlock"></div>
-        </div>
+        <ColorDropDown
+          currentColor={props.currentColor}
+          setCurrentColor={props.setCurrentColor}
+        />
       </div>
       <div className="ListToolBar-submitContainer">
         <button className="ListToolBar-submit">submit</button>

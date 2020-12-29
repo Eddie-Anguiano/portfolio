@@ -109,6 +109,7 @@ tempList.unshift("mich");
 export default function SingleLinkList() {
   const [list, setList] = useState([]);
   const [currentMethod, setCurrentMethod] = useState("push");
+  const [currentColor, setCurrentColor] = useState("green");
 
   useEffect(() => {
     convertListToArray();
@@ -164,6 +165,8 @@ export default function SingleLinkList() {
         <ListToolBar
           setCurrentMethod={setCurrentMethod}
           currentMethod={currentMethod}
+          currentColor={currentColor}
+          setCurrentColor={setCurrentColor}
         />
       </div>
     </div>

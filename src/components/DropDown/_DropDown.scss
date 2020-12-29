@@ -1,0 +1,23 @@
+.DropDown {
+  position: relative;
+  width: space(15);
+  height: rem(40px);
+  background-color: gray;
+
+  &-current {
+    padding: space(1) space(2);
+  }
+
+  &-list {
+    position: absolute;
+    top: rem(40px);
+    left: 0;
+  }
+
+  &-item {
+    width: space(15);
+    height: rem(40px);
+    background-color: gray;
+    padding: space(1) space(2);
+  }
+}

@@ -1,0 +1,33 @@
+.ListToolBar {
+  display: grid;
+  grid-template-columns: repeat(4, space(15));
+  gap: space(2);
+  margin: space(10) 0;
+
+  &-label {
+    padding-bottom: space(1);
+  }
+
+  &-methodDropDown,
+  &-valueInput,
+  &-colorDropDown,
+  &-submit {
+    width: space(15);
+    height: rem(40px);
+    background-color: gray;
+  }
+
+  &-colorBlock {
+    width: 50%;
+    height: space(2);
+  }
+
+  &-colorDropDown {
+    display: flex;
+    align-items: center;
+  }
+
+  &-submitContainer {
+    align-self: end;
+  }
+}

@@ -4,7 +4,7 @@ export default function ColorDropDown(props) {
   const [isOpen, toggleOpen] = useState(false);
   const [colors, setColors] = useState([]);
 
-  // Updates colors to all colors except currently selected method
+  // Updates colors array to all colors except currently selected color
   useEffect(() => {
     const allColors = ["green", "red", "purple", "yellow", "black", "blue"];
     const filteredList = allColors.filter(
@@ -13,10 +13,12 @@ export default function ColorDropDown(props) {
     setColors(filteredList);
   }, [props.currentColor]);
 
+  // Click handler for top block
   const handleCurrentClick = () => {
     toggleOpen(!isOpen);
   };
 
+  // Click handler for drop down items
   const handleColorClick = (e) => {
     props.setCurrentColor(e.target.id);
     toggleOpen(!isOpen);

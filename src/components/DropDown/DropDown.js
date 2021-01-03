@@ -13,10 +13,12 @@ export default function DropDown(props) {
     setItems(filteredList);
   }, [props.currentMethod]);
 
+  // Click handler for top block
   const handleCurrentClick = () => {
     toggleOpen(!isOpen);
   };
 
+  // Click handler for drop down items
   const handleItemClick = (e) => {
     props.setCurrentMethod(e.target.id);
     toggleOpen(!isOpen);

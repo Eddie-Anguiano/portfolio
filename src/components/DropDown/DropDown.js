@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dropTri from "../../images/drop-tri.svg";
+import { motion } from "framer-motion";
+import { dropVariant } from "../../models/animations";
 
 export default function DropDown(props) {
   const [isOpen, toggleOpen] = useState(false);
@@ -39,18 +41,22 @@ export default function DropDown(props) {
           />
         </span>
       </div>
-      <ul className="DropDown-list">
-        {isOpen &&
-          items.map((item) => (
-            <li
-              className="DropDown-item"
-              id={item}
-              onClick={handleItemClick}
-              key={item}>
-              {item}
-            </li>
-          ))}
-      </ul>
+      <motion.ul
+        className="DropDown-list"
+        style={{ originY: 0 }}
+        variants={dropVariant}
+        initial="initial"
+        animate={isOpen ? "animate" : "initial"}>
+        {items.map((item) => (
+          <li
+            className="DropDown-item"
+            id={item}
+            onClick={handleItemClick}
+            key={item}>
+            {item}
+          </li>
+        ))}
+      </motion.ul>
     </div>
   );
 }

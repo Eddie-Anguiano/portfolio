@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dropTri from "../../images/drop-tri.svg";
+import { motion } from "framer-motion";
+import { dropVariant } from "../../models/animations";
 
 export default function ColorDropDown(props) {
   const [isOpen, toggleOpen] = useState(false);
@@ -47,20 +49,24 @@ export default function ColorDropDown(props) {
           />
         </span>
       </div>
-      <ul className="ColorDropDown-list">
-        {isOpen &&
-          colors.map((color) => (
-            <li
-              className="ColorDropDown-color"
-              id={color}
-              key={color}
-              onClick={handleColorClick}>
-              <div
-                className="ColorDropDown-colorBox"
-                style={{ background: color }}></div>
-            </li>
-          ))}
-      </ul>
+      <motion.ul
+        className="ColorDropDown-list"
+        style={{ originY: 0 }}
+        variants={dropVariant}
+        initial="initial"
+        animate={isOpen ? "animate" : "initial"}>
+        {colors.map((color) => (
+          <li
+            className="ColorDropDown-color"
+            id={color}
+            key={color}
+            onClick={handleColorClick}>
+            <div
+              className="ColorDropDown-colorBox"
+              style={{ background: color }}></div>
+          </li>
+        ))}
+      </motion.ul>
     </div>
   );
 }

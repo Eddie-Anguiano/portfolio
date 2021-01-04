@@ -29,7 +29,8 @@ export default function ColorDropDown(props) {
 
   // Click handler for drop down items
   const handleColorClick = (e) => {
-    props.setCurrentColor(e.target.id);
+    const targ = e.target.closest(".ColorDropDown-color");
+    props.setCurrentColor(targ.id);
     toggleOpen(!isOpen);
   };
 
@@ -42,7 +43,7 @@ export default function ColorDropDown(props) {
         <span>
           <img
             src={dropTri}
-            alt=""
+            alt="triangle"
             className={
               isOpen ? "DropDown-triangleOpen" : "DropDown-triangleClosed"
             }

@@ -2,21 +2,35 @@
   display: grid;
   grid-template-columns: repeat(4, space(15));
   gap: space(2);
-  margin: space(10) 0;
+  padding: space(10) 0;
 
   &-label {
     padding-bottom: space(1);
+    color: $color--algo-white;
   }
 
-  &-methodDropDown,
   &-valueInput,
   &-submit {
     width: space(15);
     height: rem(40px);
     background-color: gray;
+    border-radius: $border-radius--small;
+    color: $color--algo-xtra-light-gray;
+  }
+
+  &-submit {
+    @include neu-button($color--algo-light-gray);
+  }
+
+  &-valueInput {
+    background-color: $color--algo-xtra-light-gray;
+    border-radius: $border-radius--small;
+    padding: space(1) space(2);
+    color: $color--algo-gray;
   }
 
   &-submitContainer {
     align-self: end;
+    border-radius: $border-radius--small;
   }
 }

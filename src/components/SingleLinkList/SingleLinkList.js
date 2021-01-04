@@ -14,7 +14,9 @@ initList.reverse();
 export default function SingleLinkList() {
   const [list, setList] = useState([]);
   const [currentMethod, setCurrentMethod] = useState("push");
-  const [currentColor, setCurrentColor] = useState("green");
+  const [currentColor, setCurrentColor] = useState(
+    "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
+  );
 
   useEffect(() => {
     convertListToArray();

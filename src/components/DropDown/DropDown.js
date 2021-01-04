@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import dropTri from "../../images/drop-tri.svg";
 
 export default function DropDown(props) {
   const [isOpen, toggleOpen] = useState(false);
@@ -27,12 +28,25 @@ export default function DropDown(props) {
   return (
     <div className="DropDown">
       <div className="DropDown-current" onClick={handleCurrentClick}>
-        {props.currentMethod}
+        <span className="DropDown-currentText">{props.currentMethod}</span>
+        <span>
+          <img
+            src={dropTri}
+            alt="triangle"
+            className={
+              isOpen ? "DropDown-triangleOpen" : "DropDown-triangleClosed"
+            }
+          />
+        </span>
       </div>
       <ul className="DropDown-list">
         {isOpen &&
           items.map((item) => (
-            <li className="DropDown-item" id={item} onClick={handleItemClick}>
+            <li
+              className="DropDown-item"
+              id={item}
+              onClick={handleItemClick}
+              key={item}>
               {item}
             </li>
           ))}

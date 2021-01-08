@@ -7,8 +7,8 @@ export default class List {
     this.length = 0;
   }
 
-  push(val) {
-    const newNode = new Node(val);
+  push(val, color) {
+    const newNode = new Node(val, color);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -59,8 +59,8 @@ export default class List {
     return curHead;
   }
 
-  unshift(val) {
-    const newNode = new Node(val);
+  unshift(val, color) {
+    const newNode = new Node(val, color);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -95,7 +95,7 @@ export default class List {
     return false;
   }
 
-  insert(val, index) {
+  insert(val, color, index) {
     if (index < 0 || index > this.length) {
       return false;
     }
@@ -107,7 +107,7 @@ export default class List {
       this.push(val);
       return true;
     }
-    const node = new Node(val);
+    const node = new Node(val, color);
     let curr = this.head;
     let prev = this.head;
     for (let i = 0; i < index; i++) {
@@ -157,9 +157,10 @@ export default class List {
 }
 
 class Node {
-  constructor(value) {
+  constructor(value, color) {
     this.value = value;
     this.next = null;
     this.key = uuidv4();
+    this.color = color;
   }
 }

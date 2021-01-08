@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from "react";
-// import NodeItem from "../Node/Node";
+import Node from "../Node/Node";
 // import { motion, AnimateSharedLayout } from "framer-motion";
 // import Header from "../Header/Header";
 import ListToolBar from "../ListToolBar/ListToolBar";
 import ListModel from "../../models/SingleLinkListModel";
 
 const initList = new ListModel();
-initList.push("eddie");
-initList.push("monica");
-initList.push("kiki");
-initList.reverse();
+initList.push(
+  "eddie",
+  "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
+);
+initList.push(
+  "monica",
+  "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
+);
+initList.push(
+  "kiki",
+  "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
+);
 
 export default function SingleLinkList() {
   const [list, setList] = useState([]);
@@ -30,6 +38,10 @@ export default function SingleLinkList() {
       node = node.next;
     }
     setList(arr);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   // function push() {
@@ -74,7 +86,22 @@ export default function SingleLinkList() {
           currentMethod={currentMethod}
           currentColor={currentColor}
           setCurrentColor={setCurrentColor}
+          handleSubmit={handleSubmit}
         />
+        <h2 className="SingleLinkList-header">Singly Linked List</h2>
+        <section className="SingleLinkList-nodeContainer">
+          {list.map((item, index) => {
+            return (
+              <Node
+                key={item.key}
+                value={item.value}
+                next={item.next ? item.next.value : "null"}
+                index={index}
+                color={item.color}
+              />
+            );
+          })}
+        </section>
       </div>
     </div>
   );

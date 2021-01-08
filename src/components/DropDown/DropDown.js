@@ -9,7 +9,16 @@ export default function DropDown(props) {
 
   // Updates items to all items except currently selected method
   useEffect(() => {
-    const allMethods = ["push", "pop", "shift", "unShift", "get", "set"];
+    const allMethods = [
+      "push",
+      "pop",
+      "shift",
+      "unshift",
+      "set",
+      "insert",
+      "remove",
+      "reverse",
+    ];
     const filteredList = allMethods.filter(
       (item) => item !== props.currentMethod
     );

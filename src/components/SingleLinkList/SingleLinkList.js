@@ -5,6 +5,7 @@ import Node from "../Node/Node";
 import ListToolBar from "../ListToolBar/ListToolBar";
 import ListModel from "../../models/SingleLinkListModel";
 
+// initial singly linked list nodes
 const initList = new ListModel();
 initList.push(
   "eddie",
@@ -20,8 +21,15 @@ initList.push(
 );
 
 export default function SingleLinkList() {
+  // array of node objects
   const [list, setList] = useState([]);
+  // selected drop down method
   const [currentMethod, setCurrentMethod] = useState("push");
+  // value of value input
+  const [value, setValue] = useState("");
+  // value of index input
+  const [indexValue, setIndex] = useState("");
+  // selected color from drop down in the form of a gradient
   const [currentColor, setCurrentColor] = useState(
     "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
   );
@@ -40,34 +48,37 @@ export default function SingleLinkList() {
     setList(arr);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const updateNodes = (e) => {
+    switch (currentMethod) {
+      case "push":
+        initList.push(value, currentColor);
+        break;
+      case "pop":
+        initList.pop();
+        break;
+      case "shift":
+        initList.shift();
+        break;
+      case "unshift":
+        initList.unshift(value, currentColor);
+        break;
+      case "set":
+        initList.set(value, currentColor, indexValue);
+        break;
+      case "insert":
+        initList.insert(value, currentColor, indexValue);
+        break;
+      case "remove":
+        initList.remove(indexValue);
+        break;
+      case "reverse":
+        initList.reverse();
+        break;
+      default:
+        break;
+    }
+    convertListToArray();
   };
-
-  // function push() {
-  //   tempList.push("push");
-  //   convertListToArray();
-  // }
-
-  // function pop() {
-  //   tempList.pop();
-  //   convertListToArray();
-  // }
-
-  // function shift() {
-  //   tempList.shift();
-  //   convertListToArray();
-  // }
-
-  // function unshift() {
-  //   tempList.unshift("unshift");
-  //   convertListToArray();
-  // }
-
-  // function get(index) {
-  //   tempList.get(index);
-  //   convertListToArray();
-  // }
 
   return (
     // <AnimateSharedLayout>
@@ -86,7 +97,11 @@ export default function SingleLinkList() {
           currentMethod={currentMethod}
           currentColor={currentColor}
           setCurrentColor={setCurrentColor}
-          handleSubmit={handleSubmit}
+          setValue={setValue}
+          setIndex={setIndex}
+          updateNodes={updateNodes}
+          value={value}
+          indexValue={indexValue}
         />
         <h2 className="SingleLinkList-header">Singly Linked List</h2>
         <section className="SingleLinkList-nodeContainer">

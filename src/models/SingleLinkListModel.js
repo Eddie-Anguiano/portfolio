@@ -86,10 +86,11 @@ export default class List {
     return node;
   }
 
-  set(val, index) {
+  set(val, color, index) {
     const foundNode = this.get(index);
     if (foundNode) {
       foundNode.value = val;
+      foundNode.color = color;
       return true;
     }
     return false;
@@ -100,11 +101,11 @@ export default class List {
       return false;
     }
     if (index === 0) {
-      this.unshift(val);
+      this.unshift(val, color);
       return true;
     }
     if (index === this.length) {
-      this.push(val);
+      this.push(val, color);
       return true;
     }
     const node = new Node(val, color);

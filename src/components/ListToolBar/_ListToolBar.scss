@@ -1,10 +1,11 @@
 .ListToolBar {
   display: grid;
-  grid-template-columns: repeat(5, minmax(space(7.5), space(15)));
+  grid-template-columns: repeat(auto-fill, minmax(space(7.5), space(15)));
   gap: space(2);
   padding: space(10) 0 space(20) 0;
 
   &-label {
+    display: block;
     padding-bottom: space(1);
     color: $color--algo-white;
   }

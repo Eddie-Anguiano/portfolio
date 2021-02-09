@@ -7,16 +7,49 @@ export default function ListToolBar({
   currentMethod,
   currentColor,
   setCurrentColor,
-  handleSubmit,
+  setValue,
+  setIndex,
+  updateNodes,
+  value,
+  indexValue,
 }) {
   let inputs;
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    updateNodes();
+  };
+
+  const handleValueChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleIndexChange = (e) => {
+    const currentValue = e.target.value;
+    const regex = /^\d+$/;
+    console.log(regex.test(currentValue));
+
+    if (regex.test(currentValue)) {
+      setIndex(parseInt(currentValue));
+    } else if (currentValue === "") {
+      setIndex("");
+    }
+  };
 
   if (currentMethod === "push" || currentMethod === "unshift") {
     inputs = (
       <>
         <div className="ListToolBar-valueContainer">
-          <div className="ListToolBar-label">value</div>
-          <input type="text" className="ListToolBar-valueInput" />
+          <label htmlFor="valueInput" className="ListToolBar-label">
+            value
+          </label>
+          <input
+            value={value}
+            id="valueInput"
+            type="text"
+            className="ListToolBar-valueInput"
+            onChange={handleValueChange}
+          />
         </div>
 
         <div className="ListToolBar-colorContainer">
@@ -32,13 +65,29 @@ export default function ListToolBar({
     inputs = (
       <>
         <div className="ListToolBar-valueContainer">
-          <div className="ListToolBar-label">value</div>
-          <input type="text" className="ListToolBar-valueInput" />
+          <label htmlFor="valueInput" className="ListToolBar-label">
+            value
+          </label>
+          <input
+            value={value}
+            id="valueInput"
+            type="text"
+            className="ListToolBar-valueInput"
+            onChange={handleValueChange}
+          />
         </div>
 
         <div className="ListToolBar-indexContainer">
-          <div className="ListToolBar-label">Index #</div>
-          <input type="text" className="ListToolBar-indexInput" />
+          <label htmlFor="indexInput" className="ListToolBar-label">
+            Index #
+          </label>
+          <input
+            value={indexValue}
+            id="indexInput"
+            type="text"
+            className="ListToolBar-indexInput"
+            onChange={handleIndexChange}
+          />
         </div>
 
         <div className="ListToolBar-colorContainer">
@@ -54,14 +103,22 @@ export default function ListToolBar({
     inputs = (
       <>
         <div className="ListToolBar-indexContainer">
-          <div className="ListToolBar-label">Index #</div>
-          <input type="text" className="ListToolBar-indexInput" />
+          <label htmlFor="indexInput" className="ListToolBar-label">
+            Index #
+          </label>
+          <input
+            value={indexValue}
+            id="indexInput"
+            type="text"
+            className="ListToolBar-indexInput"
+            onChange={handleIndexChange}
+          />
         </div>
       </>
     );
   }
   return (
-    <form action="" className="ListToolBar">
+    <form className="ListToolBar" onSubmit={handleFormSubmit}>
       <div className="ListToolBar-methodContainer">
         <div className="ListToolBar-label">Method</div>
         <DropDown
@@ -70,23 +127,10 @@ export default function ListToolBar({
         />
       </div>
 
-      {/* <div className="ListToolBar-valueContainer">
-          <div className="ListToolBar-label">value</div>
-          <input type="text" className="ListToolBar-valueInput" />
-        </div>
-
-        <div className="ListToolBar-colorContainer">
-          <div className="ListToolBar-label">color</div>
-          <ColorDropDown
-            currentColor={currentColor}
-            setCurrentColor={setCurrentColor}
-          />
-        </div> */}
       {inputs ? inputs : null}
+
       <div className="ListToolBar-submitContainer">
-        <button className="ListToolBar-submit" onClick={handleSubmit}>
-          submit
-        </button>
+        <button className="ListToolBar-submit">submit</button>
       </div>
     </form>
   );

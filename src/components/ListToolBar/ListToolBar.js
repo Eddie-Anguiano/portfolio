@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import DropDown from "../DropDown/DropDown";
 import ColorDropDown from "../ColorDropDown/ColorDropDown";
 
@@ -12,12 +12,32 @@ export default function ListToolBar({
   updateNodes,
   value,
   indexValue,
+  length,
 }) {
+  const [isValid, setIsValid] = useState(true);
   let inputs;
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    updateNodes();
+
+    if (currentMethod === "remove" || currentMethod === "set") {
+      if (length > 0 && length > indexValue) {
+        setIsValid(true);
+        updateNodes();
+      } else {
+        setIsValid(false);
+      }
+    } else if (currentMethod === "insert") {
+      if (length >= indexValue) {
+        setIsValid(true);
+        updateNodes();
+      } else {
+        setIsValid(false);
+      }
+    } else {
+      setIsValid(true);
+      updateNodes();
+    }
   };
 
   const handleValueChange = (e) => {
@@ -27,7 +47,6 @@ export default function ListToolBar({
   const handleIndexChange = (e) => {
     const currentValue = e.target.value;
     const regex = /^\d+$/;
-    console.log(regex.test(currentValue));
 
     if (regex.test(currentValue)) {
       setIndex(parseInt(currentValue));
@@ -79,7 +98,14 @@ export default function ListToolBar({
 
         <div className="ListToolBar-indexContainer">
           <label htmlFor="indexInput" className="ListToolBar-label">
-            Index #
+            Index #{" "}
+            {isValid === false ? (
+              <span className="ListToolBar-valid">
+                {currentMethod === "set"
+                  ? `(0 - ${length - 1})`
+                  : `(0 - ${length})`}
+              </span>
+            ) : null}
           </label>
           <input
             value={indexValue}
@@ -104,7 +130,10 @@ export default function ListToolBar({
       <>
         <div className="ListToolBar-indexContainer">
           <label htmlFor="indexInput" className="ListToolBar-label">
-            Index #
+            Index #{" "}
+            {isValid === false ? (
+              <span className="ListToolBar-valid">{`(0 - ${length - 1})`}</span>
+            ) : null}
           </label>
           <input
             value={indexValue}
@@ -117,6 +146,7 @@ export default function ListToolBar({
       </>
     );
   }
+
   return (
     <form className="ListToolBar" onSubmit={handleFormSubmit}>
       <div className="ListToolBar-methodContainer">

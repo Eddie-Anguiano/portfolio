@@ -33,6 +33,8 @@ export default function SingleLinkList() {
   const [currentColor, setCurrentColor] = useState(
     "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
   );
+  // value of current length of list
+  const [length, setLength] = useState(3);
 
   useEffect(() => {
     convertListToArray();
@@ -77,6 +79,7 @@ export default function SingleLinkList() {
       default:
         break;
     }
+    setLength(initList.length);
     convertListToArray();
   };
 
@@ -102,6 +105,7 @@ export default function SingleLinkList() {
           updateNodes={updateNodes}
           value={value}
           indexValue={indexValue}
+          length={length}
         />
         <h2 className="SingleLinkList-header">Singly Linked List</h2>
         <section className="SingleLinkList-nodeContainer">

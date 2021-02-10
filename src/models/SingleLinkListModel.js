@@ -135,6 +135,7 @@ export default class List {
     const before = this.get(index - 1);
     const removed = before.next;
     before.next = removed.next;
+    this.length -= 1;
     return removed;
   }
 

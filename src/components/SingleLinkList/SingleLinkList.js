@@ -8,15 +8,15 @@ import ListModel from "../../models/SingleLinkListModel";
 // initial singly linked list nodes
 const initList = new ListModel();
 initList.push(
-  "eddie",
+  "bread",
   "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
 );
 initList.push(
-  "monica",
+  "milk",
   "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
 );
 initList.push(
-  "kiki",
+  "butter",
   "linear-gradient(212.42deg, #7EF3B4 14.47%, #56A078 85.83%)"
 );
 
@@ -24,7 +24,7 @@ export default function SingleLinkList() {
   // array of node objects
   const [list, setList] = useState([]);
   // selected drop down method
-  const [currentMethod, setCurrentMethod] = useState("push");
+  const [currentMethod, setCurrentMethod] = useState("unshift");
   // value of value input
   const [value, setValue] = useState("");
   // value of index input

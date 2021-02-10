@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import DropDown from "../DropDown/DropDown";
 import ColorDropDown from "../ColorDropDown/ColorDropDown";
 
@@ -15,7 +15,12 @@ export default function ListToolBar({
   length,
 }) {
   const [isValid, setIsValid] = useState(true);
+  const ref = useRef();
   let inputs;
+
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -63,6 +68,7 @@ export default function ListToolBar({
             value
           </label>
           <input
+            ref={ref}
             value={value}
             id="valueInput"
             type="text"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Node from "../Node/Node";
-// import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimateSharedLayout } from "framer-motion";
 // import Header from "../Header/Header";
 import ListToolBar from "../ListToolBar/ListToolBar";
 import ListModel from "../../models/SingleLinkListModel";
@@ -108,19 +108,21 @@ export default function SingleLinkList() {
           length={length}
         />
         <h2 className="SingleLinkList-header">Singly Linked List</h2>
-        <section className="SingleLinkList-nodeContainer">
-          {list.map((item, index) => {
-            return (
-              <Node
-                key={item.key}
-                value={item.value}
-                next={item.next ? item.next.value : "null"}
-                index={index}
-                color={item.color}
-              />
-            );
-          })}
-        </section>
+        <AnimateSharedLayout>
+          <section className="SingleLinkList-nodeContainer">
+            {list.map((item, index) => {
+              return (
+                <Node
+                  key={item.key}
+                  value={item.value}
+                  next={item.next ? item.next.value : "null"}
+                  index={index}
+                  color={item.color}
+                />
+              );
+            })}
+          </section>
+        </AnimateSharedLayout>
       </div>
     </div>
   );

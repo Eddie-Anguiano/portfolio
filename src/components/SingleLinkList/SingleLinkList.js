@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Node from "../Node/Node";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { AnimateSharedLayout } from "framer-motion";
 // import Header from "../Header/Header";
 import ListToolBar from "../ListToolBar/ListToolBar";
 import ListModel from "../../models/SingleLinkListModel";
@@ -84,15 +84,6 @@ export default function SingleLinkList() {
   };
 
   return (
-    // <AnimateSharedLayout>
-    //   <div onClick={shift} className="SingleLinkList">
-    //     {list.map((node, index) => {
-    //       return (
-    //         <NodeItem value={node.value} next={node.next} key={node.key} />
-    //       );
-    //     })}
-    //   </div>
-    // </AnimateSharedLayout>
     <div className="SingleLinkList">
       <div className="SingleLinkList-wrapper wrapper">
         <ListToolBar

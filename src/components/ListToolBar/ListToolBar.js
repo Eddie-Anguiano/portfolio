@@ -57,6 +57,8 @@ export default function ListToolBar({
       setIndex(parseInt(currentValue));
     } else if (currentValue === "") {
       setIndex("");
+    } else {
+      setIsValid(false);
     }
   };
 

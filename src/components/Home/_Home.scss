@@ -1,8 +1,4 @@
 .home {
-  background-color: darken($color--black, 5%);
-}
-
-.home {
   &-dark {
     background-color: $color--black;
   }

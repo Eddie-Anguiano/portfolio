@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
+import SkillsSection from "../SkillsSection/SkillsSection";
 
 export default class Home extends Component {
   constructor(props) {
@@ -25,6 +26,8 @@ export default class Home extends Component {
         }>
         <Header theme={this.state.theme} toggleTheme={this.toggleTheme} />
         <Hero theme={this.state.theme} />
+        <SkillsSection />
+        <section>next section</section>
       </div>
     );
   }

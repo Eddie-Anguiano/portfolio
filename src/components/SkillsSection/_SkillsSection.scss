@@ -1,13 +1,54 @@
 .SkillsSection {
   background-color: $color--white;
-  border-radius: 4px;
+  border-radius: $border-radius--small;
   padding: space(4) space(0);
   margin-bottom: space(10);
   overflow: hidden;
 
-  &__header {
-    padding-bottom: space(2);
+  // &__header {
+  //   padding-bottom: space(2);
+  //   opacity: 0.5;
+  // }
+}
+
+.headerMarquee {
+  width: 1100px;
+  overflow: hidden;
+  position: relative;
+  height: rem(20px);
+  margin-bottom: space(2);
+
+  &__one,
+  &__two,
+  &__three,
+  &__four {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateX(-100%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 space(2.8);
+  }
+
+  &__item {
     opacity: 0.5;
+  }
+
+  &__one {
+    animation: headerMarquee 40s linear 0s infinite;
+  }
+
+  &__two {
+    animation: headerMarquee 40s linear 10s infinite;
+  }
+
+  &__three {
+    animation: headerMarquee 40s linear 20s infinite;
+  }
+
+  &__four {
+    animation: headerMarquee 40s linear 30s infinite;
   }
 }
 
@@ -47,19 +88,19 @@
   }
 
   &__one {
-    animation: marquee 20s linear 0s infinite;
+    animation: marquee 40s linear 0s infinite;
   }
 
   &__two {
-    animation: marquee 20s linear 5s infinite;
+    animation: marquee 40s linear 10s infinite;
   }
 
   &__three {
-    animation: marquee 20s linear 10s infinite;
+    animation: marquee 40s linear 20s infinite;
   }
 
   &__four {
-    animation: marquee 20s linear 15s infinite;
+    animation: marquee 40s linear 30s infinite;
   }
 }
 
@@ -72,5 +113,17 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes headerMarquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

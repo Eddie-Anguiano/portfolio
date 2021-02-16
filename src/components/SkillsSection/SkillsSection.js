@@ -52,7 +52,32 @@ export default function SkillsSection() {
 
   return (
     <section className="SkillsSection wrapper">
-      <h6 className="SkillsSection__header">Tools and Technologies</h6>
+      <div className="headerMarquee">
+        <div className="headerMarquee__one">
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+        </div>
+        <div className="headerMarquee__two">
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+        </div>
+        <div className="headerMarquee__three">
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+        </div>
+        <div className="headerMarquee__four">
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+        </div>
+      </div>
       <div className="marquee">
         <div className="marquee__one">
           {state.map((item) => (

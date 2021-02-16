@@ -53,6 +53,12 @@ export default function SkillsSection() {
   return (
     <section className="SkillsSection wrapper">
       <div className="headerMarquee">
+        <div className="headerMarquee__zero">
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+          <h6 className="headerMarquee__item">Tools and Technologies</h6>
+        </div>
         <div className="headerMarquee__one">
           <h6 className="headerMarquee__item">Tools and Technologies</h6>
           <h6 className="headerMarquee__item">Tools and Technologies</h6>
@@ -79,6 +85,14 @@ export default function SkillsSection() {
         </div>
       </div>
       <div className="marquee">
+        <div className="marquee__zero">
+          {state.map((item) => (
+            <div className="marquee__item" key={`${item.text}1`}>
+              <div>{item.logo}</div>
+              <div className="marquee__text">{item.text}</div>
+            </div>
+          ))}
+        </div>
         <div className="marquee__one">
           {state.map((item) => (
             <div className="marquee__item" key={`${item.text}1`}>

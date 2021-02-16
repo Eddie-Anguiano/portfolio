@@ -18,6 +18,16 @@
   height: rem(20px);
   margin-bottom: space(2);
 
+  &__zero {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 space(2.8);
+  }
+
   &__one,
   &__two,
   &__three,
@@ -33,6 +43,10 @@
 
   &__item {
     opacity: 0.5;
+  }
+
+  &__zero {
+    animation: marqueeHeaderZero 40s linear forwards;
   }
 
   &__one {
@@ -58,6 +72,15 @@
   overflow: hidden;
   position: relative;
   font-size: 45px;
+
+  &__zero {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__one,
   &__two,
@@ -87,6 +110,10 @@
     width: 45px;
   }
 
+  &__zero {
+    animation: marqueeZero 40s linear forwards;
+  }
+
   &__one {
     animation: marquee 40s linear 0s infinite;
   }
@@ -101,6 +128,30 @@
 
   &__four {
     animation: marquee 40s linear 30s infinite;
+  }
+}
+
+@keyframes marqueeHeaderZero {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes marqueeZero {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-200%);
   }
 }
 

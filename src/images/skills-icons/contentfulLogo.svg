@@ -4,27 +4,27 @@
   y="0px" viewBox="0 0 134 134" style="enable-background:new 0 0 134 134;" xml:space="preserve">
   <style type="text/css">
     .st0 {
-      fill: #192736;
+      fill: black;
     }
 
     .st1 {
-      fill: #fff;
+      fill: white;
     }
 
     .st2 {
-      fill: #dddddd;
+      fill: gray;
     }
 
     .st3 {
-      fill: #dddddd;
+      fill: gray;
     }
 
     .st4 {
-      fill: #b1b1b1;
+      fill: rgb(82, 82, 82);
     }
 
     .st5 {
-      fill: #b1b1b1;
+      fill: rgb(82, 82, 82);
     }
 
   </style>

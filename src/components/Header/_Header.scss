@@ -33,6 +33,35 @@
     padding-left: space(1);
     transform: scaleY(-1);
   }
+
+  &-hamburger {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+
+    @media (min-width: 839px) {
+      display: none;
+    }
+  }
+
+  &-line {
+    &__top,
+    &__middle,
+    &__bottom {
+      height: 2px;
+      background-color: $color--black;
+    }
+
+    &__middle {
+      width: 75%;
+      align-self: flex-end;
+    }
+  }
 }
 
 .header-dark .header {

@@ -1,7 +1,52 @@
+import { useEffect, useState } from "react";
 import logo from "../../images/logo-black.svg";
 import logoDark from "../../images/logo-bulb.svg";
 import logoWhite from "../../images/logo-white.svg";
 import { motion } from "framer-motion";
+
+// Hamburger Variant
+
+const hamburgerTop = {
+  closed: {
+    rotate: 0,
+    y: 0,
+  },
+  open: {
+    rotate: 135,
+    y: 11,
+    transition: {
+      ease: "easeIn",
+    },
+  },
+};
+
+const hamburgerMiddle = {
+  closed: {
+    x: 0,
+  },
+  open: {
+    x: "100%",
+    transition: {
+      ease: "easeIn",
+    },
+  },
+};
+
+const hamburgerBottom = {
+  closed: {
+    rotate: 0,
+    y: 0,
+  },
+  open: {
+    rotate: -135,
+    y: -12,
+    transition: {
+      ease: "easeIn",
+    },
+  },
+};
+
+// Nav Variants
 
 const listVariants = {
   animate: {
@@ -27,6 +72,16 @@ const itemVariants = {
 };
 
 export default function Header({ theme, toggleTheme }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }, [isOpen]);
+
+  function toggleHamburger() {
+    setIsOpen((prevState) => !prevState);
+  }
+
   function handleDarkModeClick() {
     toggleTheme();
   }
@@ -75,6 +130,24 @@ export default function Header({ theme, toggleTheme }) {
             </motion.li>
           )}
         </ul>
+
+        <nav className="header-hamburger" onClick={toggleHamburger}>
+          <motion.div
+            transition={{ ease: "easeIn" }}
+            animate={isOpen ? "open" : "closed"}
+            variants={hamburgerTop}
+            className="header-line__top"></motion.div>
+          <motion.div
+            transition={{ ease: "easeIn" }}
+            animate={isOpen ? "open" : "closed"}
+            variants={hamburgerMiddle}
+            className="header-line__middle"></motion.div>
+          <motion.div
+            transition={{ ease: "easeIn" }}
+            animate={isOpen ? "open" : "closed"}
+            variants={hamburgerBottom}
+            className="header-line__bottom"></motion.div>
+        </nav>
       </motion.div>
     </header>
   );

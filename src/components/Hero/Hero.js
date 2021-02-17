@@ -46,7 +46,7 @@ export default function Hero(props) {
           located in Los Angeles.
         </motion.h1>
         <motion.div className="hero-subheading" variants={textVariant}>
-          i make websites ;)
+          (I make websites)
         </motion.div>
         <motion.button variants={textVariant} className="hero-btn">
           contact me

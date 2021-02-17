@@ -4,7 +4,7 @@
   align-items: center;
 
   &-logo {
-    height: space(15);
+    height: space(7);
     padding: space(1) 0;
     transform: translateX(space(-2));
   }
@@ -16,6 +16,8 @@
 
   &-link {
     padding: space(3);
+    font-size: rem(16px);
+    text-transform: capitalize;
   }
 
   &-link:last-child {

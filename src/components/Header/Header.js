@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import logo from "../../images/my-logo.svg";
-import logoDark from "../../images/my-logo-dark2.svg";
+import logo from "../../images/logo-black.svg";
+import logoDark from "../../images/logo-bulb.svg";
 import { motion } from "framer-motion";
 
 const listVariants = {

@@ -53,6 +53,11 @@
       rgba(224, 224, 224, 0.3) 0%,
       rgba(191, 171, 37, 0) 60%
     );
+
+    @media (max-width: 838px) {
+      width: 120vw;
+      height: 90vw;
+    }
   }
 }
 

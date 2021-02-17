@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Node from "../Node/Node";
 import { AnimateSharedLayout } from "framer-motion";
-// import Header from "../Header/Header";
+import Header from "../Header/Header";
 import ListToolBar from "../ListToolBar/ListToolBar";
 import ListModel from "../../models/SingleLinkListModel";
 
@@ -85,6 +85,7 @@ export default function SingleLinkList() {
 
   return (
     <div className="SingleLinkList">
+      <Header />
       <div className="SingleLinkList-wrapper wrapper">
         <ListToolBar
           setCurrentMethod={setCurrentMethod}

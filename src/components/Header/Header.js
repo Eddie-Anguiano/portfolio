@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "../../images/logo-black.svg";
 import logoDark from "../../images/logo-bulb.svg";
+import logoWhite from "../../images/logo-white.svg";
 import { motion } from "framer-motion";
 
 const listVariants = {
@@ -36,42 +37,51 @@ export default class Header extends Component {
   }
 
   render() {
-    return (
-      <motion.div
-        className={
-          this.props.theme === "light"
-            ? "header wrapper header-light"
-            : "header wrapper header-dark"
-        }
-        variants={listVariants}
-        initial="initial"
-        animate="animate">
-        <motion.div variants={itemVariants} className="header-logo-wrapper">
-          <img
-            src={this.props.theme === "light" ? logo : logoDark}
-            alt="logo"
-            className="header-logo"
-          />
-        </motion.div>
+    let logoFile;
+    let headerClass;
 
-        <ul className="header-nav">
-          <motion.li variants={itemVariants} className="header-link">
-            projects
-          </motion.li>
-          <motion.li variants={itemVariants} className="header-link">
-            about
-          </motion.li>
-          <motion.li variants={itemVariants} className="header-link">
-            contact
-          </motion.li>
-          <motion.li
-            variants={itemVariants}
-            className="header-link"
-            onClick={this.toggleTheme}>
-            dark mode
-          </motion.li>
-        </ul>
-      </motion.div>
+    if (this.props.theme === "light") {
+      logoFile = logo;
+      headerClass = "header header-light";
+    } else if (this.props.theme === "dark") {
+      logoFile = logoDark;
+      headerClass = "header header-dark";
+    } else {
+      logoFile = logoWhite;
+      headerClass = "header";
+    }
+    return (
+      <header className="wrapper">
+        <motion.div
+          className={headerClass}
+          variants={listVariants}
+          initial="initial"
+          animate="animate">
+          <motion.div variants={itemVariants} className="header-logo-wrapper">
+            <img src={logoFile} alt="logo" className="header-logo" />
+          </motion.div>
+
+          <ul className="header-nav">
+            <motion.li variants={itemVariants} className="header-link">
+              projects
+            </motion.li>
+            <motion.li variants={itemVariants} className="header-link">
+              about
+            </motion.li>
+            <motion.li variants={itemVariants} className="header-link">
+              contact
+            </motion.li>
+            {this.props.theme && (
+              <motion.li
+                variants={itemVariants}
+                className="header-link"
+                onClick={this.toggleTheme}>
+                dark mode
+              </motion.li>
+            )}
+          </ul>
+        </motion.div>
+      </header>
     );
   }
 }

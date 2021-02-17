@@ -6,7 +6,6 @@
   &-logo {
     height: space(7);
     padding: space(1) 0;
-    transform: translateX(space(-2));
   }
 
   &-nav {
@@ -18,6 +17,7 @@
     padding: space(3);
     font-size: rem(16px);
     text-transform: capitalize;
+    color: $color--white;
   }
 
   &-link:last-child {

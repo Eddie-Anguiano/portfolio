@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const ctaVariant = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -13,7 +13,7 @@ const ctaVariant = {
 const textVariant = {
   initial: {
     opacity: 0,
-    x: 20,
+    x: 50,
   },
   animate: {
     opacity: 1,
@@ -26,7 +26,7 @@ const textVariant = {
 
 export default function Hero(props) {
   return (
-    <main className="wrapper">
+    <main className="wrapper hero-outer">
       <div
         className={
           props.theme === "light" ? "hero hero-light" : "hero hero-dark"
@@ -54,7 +54,7 @@ export default function Hero(props) {
 
         <div className="hero-grid2">
           <motion.img
-            initial={{ opacity: 0, x: 0, y: 55 }}
+            initial={{ opacity: 0, x: -30, y: 85 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.6 }}
             src={headshot}

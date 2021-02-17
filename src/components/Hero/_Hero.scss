@@ -3,6 +3,12 @@
   grid-template-columns: repeat(12, 1fr);
   padding-bottom: space(20);
 
+  &-outer {
+    min-height: calc(100vh - 73px);
+    display: flex;
+    align-items: center;
+  }
+
   &-grid1 {
     grid-column-start: 1;
     grid-column-end: 12;

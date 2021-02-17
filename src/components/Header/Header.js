@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 const listVariants = {
   animate: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
+      staggerDirection: -1,
     },
   },
 };
@@ -15,11 +16,11 @@ const listVariants = {
 const itemVariants = {
   initial: {
     opacity: 0,
-    y: -40,
+    x: -50,
   },
   animate: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.4,
     },

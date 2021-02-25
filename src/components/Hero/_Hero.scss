@@ -2,13 +2,13 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding-bottom: space(20);
+  padding-top: space(14);
 
   @media (max-width: 838px) {
     grid-template-rows: auto auto;
   }
 
   &-outer {
-    min-height: calc(100vh - 73px);
     display: flex;
     align-items: center;
   }
@@ -26,6 +26,7 @@
       grid-column-end: 13;
       grid-row-start: 1;
       grid-row-end: 2;
+      margin-top: space(2);
     }
   }
 
@@ -33,7 +34,7 @@
     margin-bottom: space(1);
 
     @media (max-width: 595px) {
-      font-size: space(3);
+      font-size: space(4);
     }
   }
 

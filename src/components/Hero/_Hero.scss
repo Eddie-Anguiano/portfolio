@@ -6,6 +6,8 @@
 
   @media (max-width: 838px) {
     grid-template-rows: auto auto;
+    padding-top: space(9);
+    row-gap: space(10);
   }
 
   &-outer {

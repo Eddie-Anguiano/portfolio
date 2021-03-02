@@ -56,7 +56,7 @@ const hamburgerBottom = {
 const listVariants = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.07,
       staggerDirection: -1,
     },
   },

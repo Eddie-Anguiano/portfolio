@@ -1,0 +1,84 @@
+.Project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: space(10);
+  margin: space(20) 0 space(25) 0;
+
+  @media (max-width: 1032px) {
+    grid-template-columns: 70vw;
+    grid-template-rows: auto auto;
+    gap: space(10);
+    justify-content: center;
+  }
+
+  &__screens {
+    position: relative;
+
+    @media (max-width: 1032px) {
+      order: 2;
+    }
+  }
+
+  &__desktopImg {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  &__mobileImg {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    transform: translate(30%, 30%);
+    width: 20%;
+    border-radius: 10px;
+  }
+
+  &__background {
+    position: absolute;
+    opacity: 20%;
+  }
+
+  &__info {
+    transform: translateY(-8px);
+  }
+
+  &__header {
+    margin-bottom: space(2);
+  }
+
+  &__content {
+    margin-bottom: space(4);
+  }
+
+  &__siteBtn {
+    display: inline-block;
+    color: $color--white;
+    padding: space(1) space(3);
+    border-radius: 100px;
+    margin-right: space(1);
+  }
+
+  &__figmaBtn,
+  &__githubBtn {
+    background-color: #8e8f8e;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: space(1);
+    padding: space(1);
+    border-radius: 100px;
+    height: rem(40px);
+    width: rem(40px);
+    transform: translateY(3px);
+  }
+
+  &__icon {
+    height: space(2);
+  }
+}
+
+.wrapper:nth-child(odd) .Project__screens {
+  order: 2;
+}

@@ -9,6 +9,8 @@ export default function Project({
   color,
   header,
   content,
+  squareArray,
+  theme,
 }) {
   return (
     <div className="wrapper">
@@ -17,18 +19,26 @@ export default function Project({
           <div
             className="Project__background"
             style={{
-              top: "-10%",
-              left: "20%",
-              right: "20%",
-              bottom: "-10%",
+              top: `${squareArray[0]}%`,
+              right: `${squareArray[1]}%`,
+              bottom: `${squareArray[2]}%`,
+              left: `${squareArray[3]}%`,
               backgroundColor: color,
             }}></div>
           <img className="Project__desktopImg" src={desktopImg} alt="" />
           <img className="Project__mobileImg" src={mobileImg} alt="" />
         </div>
         <div className="Project__info">
-          <h2 className="Project__header">{header}</h2>
-          <p className="Project__content">{content}</p>
+          <h2
+            style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}
+            className="Project__header">
+            {header}
+          </h2>
+          <p
+            className="Project__content"
+            style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}>
+            {content}
+          </p>
           <div className="Project__siteBtn" style={{ backgroundColor: color }}>
             View Site
           </div>

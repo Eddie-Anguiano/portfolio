@@ -93,10 +93,11 @@ export default function Header({ theme, toggleTheme }) {
 
   let logoFile;
   let headerClass;
+  let navColor;
 
   if (theme === "light") {
     logoFile = logo;
-    headerClass = "header header-light";
+    navColor = headerClass = "header header-light";
   } else if (theme === "dark") {
     logoFile = logoDark;
     headerClass = "header header-dark";

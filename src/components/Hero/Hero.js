@@ -48,7 +48,7 @@ export default function Hero(props) {
             (I make websites)
           </motion.div>
           <motion.button variants={textVariant} className="hero-btn">
-            contact me
+            Contact Me
           </motion.button>
         </motion.div>
 

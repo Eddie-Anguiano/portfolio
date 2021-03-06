@@ -1,5 +1,5 @@
 import React from "react";
-import headshot from "../../images/headshot.png";
+import headshot from "../../images/hero-headshot.png";
 import { motion } from "framer-motion";
 
 const ctaVariant = {
@@ -39,7 +39,7 @@ export default function Hero(props) {
           <motion.h1 className="hero-heading" variants={textVariant}>
             Hi!
             <br />
-            I'm <span className="hero-underline">Eddie</span>, a freelance Web
+            I'm <span className="hero-underline">Eddie</span>, a frontend Web
             Developer
             <br />
             located in Los Angeles.

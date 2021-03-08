@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: space(10);
-  margin: space(20) 0 space(25) 0;
+  margin: space(25) 0 space(25) 0;
 
   @media (max-width: 1032px) {
     grid-template-columns: 80vw;

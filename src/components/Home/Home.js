@@ -33,10 +33,13 @@ export default class Home extends Component {
         className={
           this.state.theme === "light" ? "home home-light" : "home home-dark"
         }>
+        <div></div>
         <Header theme={this.state.theme} toggleTheme={this.toggleTheme} />
         <Hero theme={this.state.theme} />
         <SkillsSection />
         <Project
+          viewSite="https://www.papasbellflower.com"
+          isLink={false}
           theme={this.state.theme}
           desktopImg={papaDesktop}
           mobileImg={papaMobile}
@@ -50,6 +53,8 @@ export default class Home extends Component {
             fusce semper tempus. Lectus sapien nulla eget mi"
         />
         <Project
+          viewSite="https://www.puvu.org"
+          isLink={false}
           theme={this.state.theme}
           desktopImg={puvuDesktop}
           mobileImg={puvuMobile}
@@ -63,6 +68,8 @@ export default class Home extends Component {
             fusce semper tempus. Lectus sapien nulla eget mi"
         />
         <Project
+          viewSite="/singleLinkList"
+          isLink={true}
           theme={this.state.theme}
           desktopImg={linkListDesktop}
           mobileImg={linkListMobile}
@@ -76,6 +83,8 @@ export default class Home extends Component {
             fusce semper tempus. Lectus sapien nulla eget mi"
         />
         <Project
+          viewSite="https://www.wuddle.tech"
+          isLink={false}
           theme={this.state.theme}
           desktopImg={wuddleDesktop}
           mobileImg={wuddleMobile}

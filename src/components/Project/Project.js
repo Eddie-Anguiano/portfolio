@@ -1,7 +1,6 @@
-// import puvuMobile from "../../images/projects/puvu-mobile.png";
-// import puvuDesktop from "../../images/projects/puvu-desktop.png";
 import figmaImg from "../../images/social-icons/figma.svg";
 import githubImg from "../../images/social-icons/github.svg";
+import { Link } from "react-router-dom";
 
 export default function Project({
   desktopImg,
@@ -11,6 +10,8 @@ export default function Project({
   content,
   squareArray,
   theme,
+  isLink,
+  viewSite,
 }) {
   return (
     <div className="wrapper">
@@ -39,9 +40,22 @@ export default function Project({
             style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}>
             {content}
           </p>
-          <div className="Project__siteBtn" style={{ backgroundColor: color }}>
-            View Site
-          </div>
+          {isLink ? (
+            <Link
+              to={viewSite}
+              className="Project__siteBtn"
+              style={{ backgroundColor: color }}>
+              View Site
+            </Link>
+          ) : (
+            <a
+              href={viewSite}
+              className="Project__siteBtn"
+              style={{ backgroundColor: color }}>
+              View Site
+            </a>
+          )}
+
           <div className="Project__githubBtn">
             <img src={githubImg} alt="github" className="Project__icon" />
           </div>

@@ -1,8 +1,8 @@
 .hero {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding-bottom: space(20);
-  padding-top: space(14);
+  padding-bottom: space(18);
+  padding-top: space(12);
 
   @media (max-width: 838px) {
     grid-template-rows: auto auto;

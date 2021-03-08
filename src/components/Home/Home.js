@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import Project from "../Project/Project";
+import Contact from "../Contact/Contact";
 import puvuMobile from "../../images/projects/puvu-mobile.jpg";
 import puvuDesktop from "../../images/projects/puvu-desktop.jpg";
 import wuddleMobile from "../../images/projects/wuddle-mobile.jpg";
@@ -33,7 +34,6 @@ export default class Home extends Component {
         className={
           this.state.theme === "light" ? "home home-light" : "home home-dark"
         }>
-        <div></div>
         <Header theme={this.state.theme} toggleTheme={this.toggleTheme} />
         <Hero theme={this.state.theme} />
         <SkillsSection />
@@ -97,6 +97,7 @@ export default class Home extends Component {
             Lectus sapien nulla eget mi. tincidunt tristique pulvinar elit sed
             fusce semper tempus. Lectus sapien nulla eget mi"
         />
+        <Contact />
       </div>
     );
   }

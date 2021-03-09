@@ -66,6 +66,21 @@ export const fadeRightIn = {
   },
 };
 
+export const fadeLeftIn = {
+  initial: {
+    x: "50px",
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: "easeOut",
+      duration: 0.7,
+    },
+  },
+};
+
 export const fadeUpLeftIn = {
   initial: {
     x: "50%",
@@ -76,6 +91,25 @@ export const fadeUpLeftIn = {
     x: "30%",
     y: "30%",
     opacity: 1,
+    transition: {
+      ease: "easeOut",
+      duration: 0.7,
+    },
+  },
+};
+
+export const scaleMiddleIn = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+    x: "-80px",
+    y: "20px",
+  },
+  animate: {
+    x: "-80px",
+    y: "20px",
+    scale: 1,
+    opacity: 0.9,
     transition: {
       ease: "easeOut",
       duration: 0.7,

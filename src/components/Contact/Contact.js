@@ -1,32 +1,67 @@
 import githubImg from "../../images/social-icons/github.svg";
 import linkedinImg from "../../images/social-icons/linkedin.svg";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  parentStagger,
+  fadeLeftIn,
+  scaleMiddleIn,
+} from "../../models/animations";
 
 export default function Contact() {
+  const controlText = useAnimation();
+  const [textRef, textInView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (textInView) {
+      controlText.start("animate");
+    }
+  }, [controlText, textInView]);
+
   return (
     <section className="Contact">
       <div className="Contact-wrapper wrapper">
-        <div className="Contact-info">
-          <div className="Contact-background"></div>
-          <h2 className="Contact-header">Contact</h2>
-          <div className="Contact-email">eddie@eamakes.com</div>
-          <a
+        <motion.div
+          ref={textRef}
+          animate={controlText}
+          initial="initial"
+          variants={parentStagger}
+          className="Contact-info">
+          <motion.div
+            variants={scaleMiddleIn}
+            className="Contact-background"></motion.div>
+          <motion.h2 variants={fadeLeftIn} className="Contact-header">
+            Contact
+          </motion.h2>
+          <motion.div variants={fadeLeftIn} className="Contact-email">
+            eddie@eamakes.com
+          </motion.div>
+          <motion.a
+            whileHover={{ scale: 1.08 }}
+            variants={fadeLeftIn}
             href="https://github.com/Eddie-Anguiano"
             className="Contact__github">
             <img src={githubImg} alt="github" className="Contact__icon" />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.08 }}
+            variants={fadeLeftIn}
             href="https://www.linkedin.com/in/eddie-anguiano-2a3442206/"
             className="Contact__linkedin">
             <img src={linkedinImg} alt="figma" className="Contact__icon" />
-          </a>
-          <p className="Contact-about">
+          </motion.a>
+          <motion.p variants={fadeLeftIn} className="Contact-about">
             My name is Eddie Anguiano. I'm a front-end web developer focused on
             making beautiful, functional, and scalable websites and web apps.
             I'm currently working within the Jamstack, connecting dynamic React
             front-ends to flexible and scalable content management systems. So,
             what are we building?{" "}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <form
           className="Contact-form"
@@ -80,9 +115,12 @@ export default function Contact() {
             name="message"
           />
 
-          <button type="submit" className="Contact-button">
+          <motion.button
+            whileHover={{ scale: 1.08 }}
+            type="submit"
+            className="Contact-button">
             Submit
-          </button>
+          </motion.button>
         </form>
       </div>
     </section>

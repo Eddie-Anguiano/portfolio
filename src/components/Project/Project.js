@@ -58,7 +58,7 @@ export default function Project({
       <section className="Project">
         <motion.div
           ref={imageRef}
-          animate={controlText}
+          animate={controlImage}
           initial="initial"
           variants={parentStagger}
           className="Project__screens">
@@ -104,7 +104,10 @@ export default function Project({
             {content}
           </motion.p>
           {isLink ? (
-            <motion.div variants={fadeUpIn} className="Project__linkWrapper">
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              variants={fadeUpIn}
+              className="Project__linkWrapper">
               <Link
                 to={viewSite}
                 className="Project__siteBtn"
@@ -114,6 +117,7 @@ export default function Project({
             </motion.div>
           ) : (
             <motion.a
+              whileHover={{ scale: 1.08 }}
               variants={fadeUpIn}
               href={viewSite}
               className="Project__siteBtn"
@@ -123,12 +127,14 @@ export default function Project({
           )}
 
           <motion.a
+            whileHover={{ scale: 1.08 }}
             variants={fadeUpIn}
             href={gitLink}
             className="Project__githubBtn">
             <img src={githubImg} alt="github" className="Project__icon" />
           </motion.a>
           <motion.a
+            whileHover={{ scale: 1.08 }}
             variants={fadeUpIn}
             href={figmaLink}
             className="Project__figmaBtn">

@@ -25,7 +25,6 @@ export default function Project({
               bottom: `${squareArray[2]}%`,
               left: `${squareArray[3]}%`,
               backgroundColor: color,
-              width: "100%",
             }}></div>
           <img className="Project__desktopImg" src={desktopImg} alt="" />
           <img className="Project__mobileImg" src={mobileImg} alt="" />

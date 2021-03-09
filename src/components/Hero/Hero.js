@@ -39,7 +39,7 @@ export default function Hero(props) {
           <motion.h1 className="hero-heading" variants={textVariant}>
             Hi!
             <br />
-            I'm <span className="hero-underline">Eddie</span>, a frontend Web
+            I'm <span className="hero-underline">Eddie</span>, a Front-End Web
             Developer
             <br />
             located in Los Angeles.

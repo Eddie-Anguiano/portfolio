@@ -49,6 +49,10 @@
 
   &__header {
     margin-bottom: space(2);
+
+    @media (max-width: 450px) {
+      font-size: space(3.5);
+    }
   }
 
   &__content {

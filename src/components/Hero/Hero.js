@@ -47,7 +47,10 @@ export default function Hero(props) {
           <motion.div className="hero-subheading" variants={textVariant}>
             (I make websites)
           </motion.div>
-          <motion.button variants={textVariant} className="hero-btn">
+          <motion.button
+            variants={textVariant}
+            className="hero-btn"
+            whileHover={{ scale: 1.08 }}>
             Contact Me
           </motion.button>
         </motion.div>

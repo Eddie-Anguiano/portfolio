@@ -1,6 +1,16 @@
 import figmaImg from "../../images/social-icons/figma.svg";
 import githubImg from "../../images/social-icons/github.svg";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  parentStagger,
+  fadeUpIn,
+  scaleMiddle,
+  fadeRightIn,
+  fadeUpLeftIn,
+} from "../../models/animations";
 
 export default function Project({
   desktopImg,
@@ -15,11 +25,45 @@ export default function Project({
   figmaLink,
   gitLink,
 }) {
+  // Intersection Observer for text
+  const controlText = useAnimation();
+  const [textRef, textInView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
+
+  // Text controller
+  useEffect(() => {
+    if (textInView) {
+      controlText.start("animate");
+    }
+  }, [controlText, textInView]);
+
+  // Intersection Observer for Image
+  const controlImage = useAnimation();
+  const [imageRef, imageInView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
+
+  // Image controller
+  useEffect(() => {
+    if (imageInView) {
+      controlImage.start("animate");
+    }
+  }, [controlImage, imageInView]);
+
   return (
     <div className="wrapper">
       <section className="Project">
-        <div className="Project__screens">
-          <div
+        <motion.div
+          ref={imageRef}
+          animate={controlText}
+          initial="initial"
+          variants={parentStagger}
+          className="Project__screens">
+          <motion.div
+            variants={scaleMiddle}
             className="Project__background"
             style={{
               top: `${squareArray[0]}%`,
@@ -27,44 +71,70 @@ export default function Project({
               bottom: `${squareArray[2]}%`,
               left: `${squareArray[3]}%`,
               backgroundColor: color,
-            }}></div>
-          <img className="Project__desktopImg" src={desktopImg} alt="" />
-          <img className="Project__mobileImg" src={mobileImg} alt="" />
-        </div>
-        <div className="Project__info">
-          <h2
+            }}></motion.div>
+          <motion.img
+            variants={fadeRightIn}
+            className="Project__desktopImg"
+            src={desktopImg}
+            alt="desktop"
+          />
+          <motion.img
+            variants={fadeUpLeftIn}
+            className="Project__mobileImg"
+            src={mobileImg}
+            alt="mobile"
+          />
+        </motion.div>
+        <motion.div
+          ref={textRef}
+          animate={controlText}
+          initial="initial"
+          variants={parentStagger}
+          className="Project__info">
+          <motion.h2
+            variants={fadeUpIn}
             style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}
             className="Project__header">
             {header}
-          </h2>
-          <p
+          </motion.h2>
+          <motion.p
+            variants={fadeUpIn}
             className="Project__content"
             style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}>
             {content}
-          </p>
+          </motion.p>
           {isLink ? (
-            <Link
-              to={viewSite}
-              className="Project__siteBtn"
-              style={{ backgroundColor: color }}>
-              View Site
-            </Link>
+            <motion.div variants={fadeUpIn} className="Project__linkWrapper">
+              <Link
+                to={viewSite}
+                className="Project__siteBtn"
+                style={{ backgroundColor: color }}>
+                View Site
+              </Link>
+            </motion.div>
           ) : (
-            <a
+            <motion.a
+              variants={fadeUpIn}
               href={viewSite}
               className="Project__siteBtn"
               style={{ backgroundColor: color }}>
               View Site
-            </a>
+            </motion.a>
           )}
 
-          <a href={gitLink} className="Project__githubBtn">
+          <motion.a
+            variants={fadeUpIn}
+            href={gitLink}
+            className="Project__githubBtn">
             <img src={githubImg} alt="github" className="Project__icon" />
-          </a>
-          <a href={figmaLink} className="Project__figmaBtn">
+          </motion.a>
+          <motion.a
+            variants={fadeUpIn}
+            href={figmaLink}
+            className="Project__figmaBtn">
             <img src={figmaImg} alt="figma" className="Project__icon" />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </section>
     </div>
   );

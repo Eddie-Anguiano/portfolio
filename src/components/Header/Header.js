@@ -114,7 +114,10 @@ export default function Header({ theme, toggleTheme }) {
           variants={listVariants}
           initial="initial"
           animate="animate">
-          <motion.div variants={itemVariants} className="header-logo-wrapper">
+          <motion.div
+            variants={itemVariants}
+            className="header-logo-wrapper"
+            whileHover={{ scale: 1.08 }}>
             <img src={logoFile} alt="logo" className="header-logo" />
           </motion.div>
 

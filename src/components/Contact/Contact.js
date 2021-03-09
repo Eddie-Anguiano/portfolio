@@ -6,6 +6,7 @@ export default function Contact() {
     <section className="Contact">
       <div className="Contact-wrapper wrapper">
         <div className="Contact-info">
+          <div className="Contact-background"></div>
           <h2 className="Contact-header">Contact</h2>
           <div className="Contact-email">eddie@eamakes.com</div>
           <div className="Contact__github">
@@ -72,7 +73,7 @@ export default function Contact() {
             id="message"
             type="text"
             className="Contact-input Contact-textarea"
-            name="text_area"
+            name="message"
           />
 
           <button type="submit" className="Contact-button">

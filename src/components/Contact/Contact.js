@@ -47,7 +47,7 @@ export default function Contact() {
                 last Name
               </label>
               <input
-                name="lasName"
+                name="lastName"
                 id="lastName"
                 type="text"
                 className="Contact-input"

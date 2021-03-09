@@ -12,6 +12,8 @@ export default function Project({
   theme,
   isLink,
   viewSite,
+  figmaLink,
+  gitLink,
 }) {
   return (
     <div className="wrapper">
@@ -56,12 +58,12 @@ export default function Project({
             </a>
           )}
 
-          <div className="Project__githubBtn">
+          <a href={gitLink} className="Project__githubBtn">
             <img src={githubImg} alt="github" className="Project__icon" />
-          </div>
-          <div className="Project__figmaBtn">
+          </a>
+          <a href={figmaLink} className="Project__figmaBtn">
             <img src={figmaImg} alt="figma" className="Project__icon" />
-          </div>
+          </a>
         </div>
       </section>
     </div>

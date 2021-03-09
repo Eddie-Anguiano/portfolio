@@ -1,5 +1,5 @@
-import figmaImg from "../../images/social-icons/figma.svg";
 import githubImg from "../../images/social-icons/github.svg";
+import linkedinImg from "../../images/social-icons/linkedin.svg";
 
 export default function Contact() {
   return (
@@ -9,12 +9,16 @@ export default function Contact() {
           <div className="Contact-background"></div>
           <h2 className="Contact-header">Contact</h2>
           <div className="Contact-email">eddie@eamakes.com</div>
-          <div className="Contact__github">
+          <a
+            href="https://github.com/Eddie-Anguiano"
+            className="Contact__github">
             <img src={githubImg} alt="github" className="Contact__icon" />
-          </div>
-          <div className="Contact__linkedin">
-            <img src={figmaImg} alt="figma" className="Contact__icon" />
-          </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eddie-anguiano-2a3442206/"
+            className="Contact__linkedin">
+            <img src={linkedinImg} alt="figma" className="Contact__icon" />
+          </a>
           <p className="Contact-about">
             My name is Eddie Anguiano. I'm a front-end web developer focused on
             making beautiful, functional, and scalable websites and web apps.

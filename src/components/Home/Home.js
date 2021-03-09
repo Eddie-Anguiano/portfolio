@@ -46,6 +46,8 @@ export default class Home extends Component {
           color="#5b2822"
           header="PapasBellflower.com"
           squareArray={[20, 20, -15, -10]}
+          figmaLink="https://www.figma.com/file/ZK1uoZmkYlnq54XKBtBLiS/papa-joe?node-id=0%3A1"
+          gitLink="https://github.com/Eddie-Anguiano/papaJoes.git"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A dolor in
             vestibulum ac id. Ornare morbi auctor malesuada magna arcu cras.
             Mauris tincidunt tristique pulvinar elit sed fusce semper tempus.
@@ -61,6 +63,8 @@ export default class Home extends Component {
           color="#2e5081"
           header="Puvu.org"
           squareArray={[-10, 20, -10, 20]}
+          figmaLink="https://www.figma.com/file/TuzwiAYtryJEZpnARsdUnH/Untitled?node-id=116%3A65"
+          gitLink="https://github.com/Eddie-Anguiano/native-website.git"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A dolor in
             vestibulum ac id. Ornare morbi auctor malesuada magna arcu cras.
             Mauris tincidunt tristique pulvinar elit sed fusce semper tempus.
@@ -76,6 +80,8 @@ export default class Home extends Component {
           color="#66c190"
           header="Linked List Visualizer"
           squareArray={[-20, -15, 15, 10]}
+          figmaLink="https://www.figma.com/file/sHDW1JVbCJpRtcinr7Y5bc/Untitled?node-id=0%3A1"
+          gitLink="https://github.com/Eddie-Anguiano/portfolio/blob/main/src/components/SingleLinkList/SingleLinkList.js"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A dolor in
             vestibulum ac id. Ornare morbi auctor malesuada magna arcu cras.
             Mauris tincidunt tristique pulvinar elit sed fusce semper tempus.
@@ -91,6 +97,8 @@ export default class Home extends Component {
           color="#fdc961"
           header="Wuddle.tech"
           squareArray={[20, 20, -15, -10]}
+          figmaLink="https://www.figma.com/file/C7IXh2YnXbSGT8BimHhV3i/stay"
+          gitLink="https://github.com/Eddie-Anguiano/wuddle.it.git"
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. A dolor in
             vestibulum ac id. Ornare morbi auctor malesuada magna arcu cras.
             Mauris tincidunt tristique pulvinar elit sed fusce semper tempus.

@@ -3,6 +3,7 @@
   grid-template-columns: repeat(12, 1fr);
   padding-bottom: space(18);
   padding-top: space(12);
+  width: 100%;
 
   @media (max-width: 838px) {
     grid-template-rows: auto auto;
@@ -51,6 +52,7 @@
   }
 
   &-grid2 {
+    position: relative;
     grid-column-start: 9;
     grid-column-end: 13;
     grid-row-start: 1;
@@ -68,9 +70,7 @@
 
   &-headshot {
     width: 100%;
-    margin-top: space(19);
     padding: 0 space(2);
-    margin-bottom: space(-4);
 
     @media (max-width: 838px) {
       width: 100%;
@@ -94,7 +94,7 @@
   }
 
   &-grid2 {
-    background-color: $color--white;
+    // background-color: $color--white;
   }
 
   &-underline {
@@ -149,4 +149,11 @@
       border-radius: 1px;
     }
   }
+}
+
+.white {
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }

@@ -13,13 +13,13 @@ const ctaVariant = {
 const textVariant = {
   initial: {
     opacity: 0,
-    x: 50,
+    x: 60,
   },
   animate: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
     },
   },
 };
@@ -53,9 +53,10 @@ export default function Hero(props) {
         </motion.div>
 
         <div className="hero-grid2">
+          <div className="white"></div>
           <motion.img
-            initial={{ opacity: 0, x: -30, y: 85 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, x: -80, y: 130 }}
+            animate={{ opacity: 1, x: -0, y: 95 }}
             transition={{ duration: 0.6 }}
             src={headshot}
             alt=""

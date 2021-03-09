@@ -36,8 +36,8 @@ export default function Contact() {
                 First Name
               </label>
               <input
-                id="first_name"
-                name="first_name"
+                id="firstName"
+                name="firstName"
                 type="text"
                 className="Contact-input"
               />
@@ -47,8 +47,8 @@ export default function Contact() {
                 last Name
               </label>
               <input
-                name="last_name"
-                id="last_name"
+                name="lasName"
+                id="lastName"
                 type="text"
                 className="Contact-input"
               />

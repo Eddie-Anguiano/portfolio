@@ -168,7 +168,7 @@ export default function ListToolBar({
       {inputs ? inputs : null}
 
       <div className="ListToolBar-submitContainer">
-        <button className="ListToolBar-submit">submit</button>
+        <button className="ListToolBar-submit">Run</button>
       </div>
     </form>
   );

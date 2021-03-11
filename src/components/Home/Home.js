@@ -64,7 +64,7 @@ export default class Home extends Component {
           content="Custom design, implemented in React and Next.js.  A non-profit website with ample animations/effects (Framer Motion) but a focus on content.  On the development side, all the fundamentals are here, UI/UX, SEO, accessibility, and an emphasis on modular coding practices."
         />
         <Project
-          viewSite="/singleLinkList"
+          viewSite="/singlelinklist"
           isLink={true}
           theme={this.state.theme}
           desktopImg={linkListDesktop}

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../../images/logo-black.svg";
-import logoDark from "../../images/logo-bulb.svg";
+import logoBlack from "../../images/logo-black.svg";
 import logoWhite from "../../images/logo-white.svg";
 import MobileNav from "../MobileNav/MobileNav";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,6 +9,22 @@ import { motion, AnimatePresence } from "framer-motion";
 const hamburgerTop = {
   closed: {
     backgroundColor: "#1f1f1f",
+    rotate: 0,
+    y: 0,
+  },
+  open: {
+    backgroundColor: "#f5f5f5",
+    rotate: 135,
+    y: 11,
+    transition: {
+      ease: "easeIn",
+    },
+  },
+};
+
+const hamburgerTopDark = {
+  closed: {
+    backgroundColor: "#f5f5f5",
     rotate: 0,
     y: 0,
   },
@@ -51,6 +66,22 @@ const hamburgerBottom = {
   },
 };
 
+const hamburgerBottomDark = {
+  closed: {
+    backgroundColor: "#f5f5f5",
+    rotate: 0,
+    y: 0,
+  },
+  open: {
+    backgroundColor: "#f5f5f5",
+    rotate: -135,
+    y: -12,
+    transition: {
+      ease: "easeIn",
+    },
+  },
+};
+
 // Nav Variants
 
 const listVariants = {
@@ -76,7 +107,7 @@ const itemVariants = {
   },
 };
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header({ theme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -87,30 +118,14 @@ export default function Header({ theme, toggleTheme }) {
     setIsOpen((prevState) => !prevState);
   }
 
-  function handleDarkModeClick() {
-    toggleTheme();
-  }
-
-  let logoFile;
-  let headerClass;
-
-  if (theme === "light") {
-    logoFile = logo;
-    headerClass = "header header-light";
-  } else if (theme === "dark") {
-    logoFile = logoDark;
-    headerClass = "header header-dark";
-  } else {
-    logoFile = logoWhite;
-    headerClass = "header";
-  }
-
   return (
     <>
       <AnimatePresence>{isOpen && <MobileNav />}</AnimatePresence>
       <header className="wrapper">
         <motion.div
-          className={headerClass}
+          className={
+            theme === "light" ? "header header-light" : "header header-dark"
+          }
           variants={listVariants}
           initial="initial"
           animate="animate">
@@ -118,7 +133,11 @@ export default function Header({ theme, toggleTheme }) {
             variants={itemVariants}
             className="header-logo-wrapper"
             whileHover={{ scale: 1.08 }}>
-            <img src={logoFile} alt="logo" className="header-logo" />
+            <img
+              src={theme === "light" ? logoBlack : logoWhite}
+              alt="logo"
+              className="header-logo"
+            />
           </motion.div>
 
           <ul className="header-nav">
@@ -131,31 +150,30 @@ export default function Header({ theme, toggleTheme }) {
             <motion.li variants={itemVariants} className="header-link">
               contact
             </motion.li>
-            {theme && (
-              <motion.li
-                variants={itemVariants}
-                className="header-link"
-                onClick={handleDarkModeClick}>
-                dark mode
-              </motion.li>
-            )}
           </ul>
 
           <nav className="header-hamburger" onClick={toggleHamburger}>
             <motion.div
               transition={{ ease: "easeIn" }}
               animate={isOpen ? "open" : "closed"}
-              variants={hamburgerTop}
+              variants={theme === "light" ? hamburgerTop : hamburgerTopDark}
               className="header-line__top"></motion.div>
             <motion.div
               transition={{ ease: "easeIn" }}
               animate={isOpen ? "open" : "closed"}
               variants={hamburgerMiddle}
-              className="header-line__middle"></motion.div>
+              className="header-line__middle"
+              style={
+                theme === "light"
+                  ? { backgroundColor: "#1f1f1f" }
+                  : { backgroundColor: "#f5f5f5" }
+              }></motion.div>
             <motion.div
               transition={{ ease: "easeIn" }}
               animate={isOpen ? "open" : "closed"}
-              variants={hamburgerBottom}
+              variants={
+                theme === "light" ? hamburgerBottom : hamburgerBottomDark
+              }
               className="header-line__bottom"></motion.div>
           </nav>
         </motion.div>

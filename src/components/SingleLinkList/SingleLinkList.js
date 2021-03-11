@@ -85,7 +85,7 @@ export default function SingleLinkList() {
 
   return (
     <div className="SingleLinkList">
-      <Header />
+      <Header theme="dark" />
       <div className="SingleLinkList-wrapper wrapper">
         <ListToolBar
           setCurrentMethod={setCurrentMethod}

@@ -14,33 +14,15 @@ import papaMobile from "../../images/projects/papa-mobile.jpg";
 import papaDesktop from "../../images/projects/papa-desktop.jpg";
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      theme: "light",
-    };
-    this.toggleTheme = this.toggleTheme.bind(this);
-  }
-
-  toggleTheme() {
-    this.setState((st) => {
-      return { theme: st.theme === "light" ? "dark" : "light" };
-    });
-  }
-
   render() {
     return (
-      <div
-        className={
-          this.state.theme === "light" ? "home home-light" : "home home-dark"
-        }>
-        <Header theme={this.state.theme} toggleTheme={this.toggleTheme} />
-        <Hero theme={this.state.theme} />
+      <div className="home">
+        <Header theme="light" />
+        <Hero />
         <SkillsSection />
         <Project
           viewSite="https://www.papasbellflower.com"
           isLink={false}
-          theme={this.state.theme}
           desktopImg={papaDesktop}
           mobileImg={papaMobile}
           color="#5b2822"
@@ -53,7 +35,6 @@ export default class Home extends Component {
         <Project
           viewSite="https://www.puvu.org"
           isLink={false}
-          theme={this.state.theme}
           desktopImg={puvuDesktop}
           mobileImg={puvuMobile}
           color="#2e5081"
@@ -66,7 +47,6 @@ export default class Home extends Component {
         <Project
           viewSite="/singlelinklist"
           isLink={true}
-          theme={this.state.theme}
           desktopImg={linkListDesktop}
           mobileImg={linkListMobile}
           color="#66c190"
@@ -79,7 +59,6 @@ export default class Home extends Component {
         <Project
           viewSite="https://www.wuddle.tech"
           isLink={false}
-          theme={this.state.theme}
           desktopImg={wuddleDesktop}
           mobileImg={wuddleMobile}
           color="#fdc961"

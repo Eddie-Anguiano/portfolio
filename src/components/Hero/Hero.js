@@ -27,10 +27,7 @@ const textVariant = {
 export default function Hero(props) {
   return (
     <main className="wrapper hero-outer">
-      <div
-        className={
-          props.theme === "light" ? "hero hero-light" : "hero hero-dark"
-        }>
+      <div className="hero">
         <motion.div
           className="hero-grid1"
           variants={ctaVariant}
@@ -60,13 +57,13 @@ export default function Hero(props) {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="white"></motion.div>
+            className="hero-background"></motion.div>
           <motion.img
             initial={{ opacity: 0, x: -80, y: 130 }}
             animate={{ opacity: 1, x: -0, y: 95 }}
             transition={{ duration: 0.6 }}
             src={headshot}
-            alt=""
+            alt="headshot"
             className="hero-headshot"
           />
         </div>

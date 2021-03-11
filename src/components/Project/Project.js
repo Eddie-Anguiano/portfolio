@@ -19,7 +19,6 @@ export default function Project({
   header,
   content,
   squareArray,
-  theme,
   isLink,
   viewSite,
   figmaLink,
@@ -91,16 +90,10 @@ export default function Project({
           initial="initial"
           variants={parentStagger}
           className="Project__info">
-          <motion.h2
-            variants={fadeUpIn}
-            style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}
-            className="Project__header">
+          <motion.h2 variants={fadeUpIn} className="Project__header">
             {header}
           </motion.h2>
-          <motion.p
-            variants={fadeUpIn}
-            className="Project__content"
-            style={theme === "dark" ? { color: "#fff" } : { color: "#1f1f1f" }}>
+          <motion.p variants={fadeUpIn} className="Project__content">
             {content}
           </motion.p>
           {isLink ? (

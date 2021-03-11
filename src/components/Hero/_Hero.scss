@@ -45,6 +45,21 @@
   &-underline {
     position: relative;
     font-family: $font-family--secondary;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: 6px;
+      left: 0;
+      height: space(1);
+      width: 100%;
+      background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
+      border-radius: 1px;
+
+      @media (max-width: 595px) {
+        bottom: 2px;
+      }
+    }
   }
 
   &-subheading {
@@ -84,73 +99,15 @@
     padding: space(1.5) space(3);
     border-radius: $border-radius--circle;
     font-family: $font-family--secondary;
-  }
-}
-
-.hero-light .hero {
-  &-btn {
     background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
     color: $color--light-gray;
     box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.4);
   }
 
-  &-underline {
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      bottom: 6px;
-      left: 0;
-      height: space(1);
-      width: 100%;
-      background: linear-gradient(266.05deg, #b62027 9.87%, #aa286c 89.34%);
-      border-radius: 1px;
-
-      @media (max-width: 595px) {
-        bottom: 2px;
-      }
-    }
+  &-background {
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    width: 100%;
   }
-}
-
-.hero-dark .hero {
-  &-heading {
-    color: $color--white;
-  }
-
-  &-subheading {
-    color: $color--white;
-  }
-
-  &-btn {
-    background: linear-gradient(344.67deg, #1b416f 10.4%, #424279 89.19%);
-    border-radius: 100px;
-    color: $color--light-gray;
-  }
-
-  &-grid2 {
-    background-color: $color--off-black;
-  }
-
-  &-underline {
-    color: $color--white;
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      bottom: 6px;
-      left: 0;
-      height: space(1);
-      width: 100%;
-      background: linear-gradient(344.67deg, #1b416f 10.4%, #424279 89.19%);
-      border-radius: 1px;
-    }
-  }
-}
-
-.white {
-  position: absolute;
-  background-color: white;
-  height: 100%;
-  width: 100%;
 }

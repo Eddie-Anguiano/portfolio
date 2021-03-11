@@ -56,7 +56,11 @@ export default function Hero(props) {
         </motion.div>
 
         <div className="hero-grid2">
-          <div className="white"></div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="white"></motion.div>
           <motion.img
             initial={{ opacity: 0, x: -80, y: 130 }}
             animate={{ opacity: 1, x: -0, y: 95 }}

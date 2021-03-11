@@ -1,6 +1,6 @@
 .SingleLinkList {
   background-color: $color--algo-gray;
-  height: 100vh;
+  min-height: 100vh;
 
   &-header {
     color: $color--algo-xtra-light-gray;

@@ -65,6 +65,13 @@ export default function ListToolBar({
   if (currentMethod === "push" || currentMethod === "unshift") {
     inputs = (
       <>
+        <div className="ListToolBar-colorContainer">
+          <div className="ListToolBar-label">color</div>
+          <ColorDropDown
+            currentColor={currentColor}
+            setCurrentColor={setCurrentColor}
+          />
+        </div>
         <div className="ListToolBar-valueContainer">
           <label htmlFor="valueInput" className="ListToolBar-label">
             value
@@ -78,7 +85,11 @@ export default function ListToolBar({
             onChange={handleValueChange}
           />
         </div>
-
+      </>
+    );
+  } else if (currentMethod === "set" || currentMethod === "insert") {
+    inputs = (
+      <>
         <div className="ListToolBar-colorContainer">
           <div className="ListToolBar-label">color</div>
           <ColorDropDown
@@ -86,11 +97,6 @@ export default function ListToolBar({
             setCurrentColor={setCurrentColor}
           />
         </div>
-      </>
-    );
-  } else if (currentMethod === "set" || currentMethod === "insert") {
-    inputs = (
-      <>
         <div className="ListToolBar-valueContainer">
           <label htmlFor="valueInput" className="ListToolBar-label">
             value
@@ -121,14 +127,6 @@ export default function ListToolBar({
             type="text"
             className="ListToolBar-indexInput"
             onChange={handleIndexChange}
-          />
-        </div>
-
-        <div className="ListToolBar-colorContainer">
-          <div className="ListToolBar-label">color</div>
-          <ColorDropDown
-            currentColor={currentColor}
-            setCurrentColor={setCurrentColor}
           />
         </div>
       </>

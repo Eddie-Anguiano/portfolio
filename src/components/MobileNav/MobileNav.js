@@ -24,7 +24,7 @@ export default function mobileNav() {
             <li className="MobileNav-item">Home</li>
           </Link>
           <Link to="/singlelinklist">
-            <li className="MobileNav-item">Algorithm Visualizers</li>
+            <li className="MobileNav-item">Algorithm Visualizer</li>
           </Link>
           <Link to="/resume">
             <li className="MobileNav-item">Resume</li>

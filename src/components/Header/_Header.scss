@@ -17,21 +17,20 @@
     }
   }
 
-  &-link {
-    padding: space(3);
+  &-linkResume,
+  &-linkAlgo {
     font-size: rem(16px);
+    font-family: $font-family--secondary;
     text-transform: capitalize;
     color: $color--white;
   }
 
-  &-link:last-child {
-    padding: space(3) 0 space(3) space(3);
+  &-linkResume {
+    padding: space(3);
   }
 
-  &-switch {
-    height: space(2);
-    padding-left: space(1);
-    transform: scaleY(-1);
+  &-linkAlgo {
+    padding: space(3) 0 space(3) space(3);
   }
 
   &-hamburger {
@@ -64,7 +63,8 @@
 }
 
 .header-light .header {
-  &-link {
+  &-linkAlgo,
+  &-linkResume {
     color: $color--black;
   }
 }

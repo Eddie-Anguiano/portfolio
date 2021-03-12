@@ -3,6 +3,7 @@ import logoBlack from "../../images/logo-black.svg";
 import logoWhite from "../../images/logo-white.svg";
 import MobileNav from "../MobileNav/MobileNav";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Hamburger Variant
 
@@ -133,22 +134,26 @@ export default function Header({ theme }) {
             variants={itemVariants}
             className="header-logo-wrapper"
             whileHover={{ scale: 1.08 }}>
-            <img
-              src={theme === "light" ? logoBlack : logoWhite}
-              alt="logo"
-              className="header-logo"
-            />
+            <Link to="/">
+              <img
+                src={theme === "light" ? logoBlack : logoWhite}
+                alt="logo"
+                className="header-logo"
+              />
+            </Link>
           </motion.div>
 
           <ul className="header-nav">
-            <motion.li variants={itemVariants} className="header-link">
-              projects
+            <motion.li whileHover={{ scale: 1.08 }} variants={itemVariants}>
+              <Link className="header-linkResume" to="/resume">
+                Resume
+              </Link>
             </motion.li>
-            <motion.li variants={itemVariants} className="header-link">
-              about
-            </motion.li>
-            <motion.li variants={itemVariants} className="header-link">
-              contact
+
+            <motion.li whileHover={{ scale: 1.08 }} variants={itemVariants}>
+              <Link className="header-linkAlgo" to="singlelinklist">
+                Algo Visualizer
+              </Link>
             </motion.li>
           </ul>
 

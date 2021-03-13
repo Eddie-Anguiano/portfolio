@@ -25,6 +25,11 @@ const textVariant = {
 };
 
 export default function Hero(props) {
+  function clickHandler() {
+    window.scrollTo(0, document.body.scrollHeight);
+    console.log("hit");
+  }
+
   return (
     <main className="wrapper hero-outer">
       <div className="hero">
@@ -45,6 +50,7 @@ export default function Hero(props) {
             (I make websites)
           </motion.div>
           <motion.button
+            onClick={clickHandler}
             variants={textVariant}
             className="hero-btn"
             whileHover={{ scale: 1.08 }}>

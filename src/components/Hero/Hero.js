@@ -1,6 +1,10 @@
 import React from "react";
 import headshot from "../../images/hero-headshot.png";
 import { motion } from "framer-motion";
+import smoothscroll from "smoothscroll-polyfill";
+
+// start polyfill
+smoothscroll.polyfill();
 
 const ctaVariant = {
   animate: {
@@ -26,7 +30,10 @@ const textVariant = {
 
 export default function Hero(props) {
   function clickHandler() {
-    window.scrollTo(0, document.body.scrollHeight);
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
     console.log("hit");
   }
 

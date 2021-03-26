@@ -149,12 +149,6 @@ export default function Header({ theme }) {
                 Resume
               </Link>
             </motion.li>
-
-            <motion.li whileHover={{ scale: 1.08 }} variants={itemVariants}>
-              <Link className="header-linkAlgo" to="singlelinklist">
-                Algo Visualizer
-              </Link>
-            </motion.li>
           </ul>
 
           <nav className="header-hamburger" onClick={toggleHamburger}>
